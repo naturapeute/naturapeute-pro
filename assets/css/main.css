@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+}
+.row {
+  max-width: 100%;
+}
+
+body {
+  font-size: 18px;
+  color: #5b5b5b;
+}
+
+h1, h2 {
+  font-weight: normal;
+  font-size: 3em;
+}
+
+button,
+.button {
+  border-radius: .25rem;
+}
+a.button {
+  padding: 1rem 2rem;
+  background-color: #68b246;
+  font-weight: normal;
+  color: #fff;
+  border: 0;
+  font-size: 1rem;
+}
+
+header {
+  padding: 1rem 5rem;
+}
+header h1,
+header h1 img {
+  height: 60px; /* force height to match image */
+  font-size: .8rem;
+}
+/* Align image with "pro" text and nav */
+header h1 img {
+  margin-bottom: -23px;
+  margin-right: -9px;
+  margin-top: 4px;
+}
+header nav a.button {
+  margin-left: 3rem;
+}
+header nav a {
+  margin-left: 1.5rem;
+}
