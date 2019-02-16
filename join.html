@@ -38,30 +38,29 @@
     <fieldset>
       <legend><i class="fas fa-user"></i> À propos de vous</legend>
       <div class=row>
-        <input name="first_name" placeholder="Prénom" required>
-        <input name="last_name" placeholder="Nom" required>
+        <input name="firstname" placeholder="Prénom" required>
+        <input name="lastname" placeholder="Nom" required>
       </div>
-      <input type="email" name="email" placeholder="Adresse email" required>
     </fieldset>
 
     <fieldset>
       <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
       <div class=row>
-        <select name="activity" required onchange="selectActivity(this)">
+        <select name="therapy" required onchange="selectActivity(this)">
           <option value="naturopathie">Naturopathie</option>
           <option value="coaching">Coaching de vie</option>
           <option value="accupressing">Accupressing</option>
           <option value="medecine-chinoise">Médecine chinoise</option>
-          <option value="other">Préciser…</option>
+          <option value="other">Autre, préciser…</option>
         </select>
-        <input name="activity-other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
+        <input name="therapy_other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
       </div>
       <div class="row">
         <input type="email" name="email" placeholder="Adresse email professionnelle" required>
         <input type="tel" name="phone" placeholder="Numéro de téléphone professionel" required>
       </div>
       <label class=row>
-        <input type="checkbox" name="certified" required>
+        <input type="checkbox" name="is_certified" value="1" required>
         <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
       </label>
     </fieldset>
@@ -77,9 +76,32 @@
 
 <script>
   const otherActivity = document.querySelector('[name="activity-other"]')
+
   function selectActivity(selector) {
-    otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden';
+    otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden'
   }
+
+  document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const fields = {}
+    Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
+    fields.is_certified = !!fields.is_certified
+    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Table%201', {
+      headers: {
+        'Authorization': 'Bearer key7TSHb7BPpx1jts',
+        'Content-Type': 'application/json',
+      },
+      method: 'post',
+      mode: 'cors',
+      body: JSON.stringify({ fields })
+    })
+    .then((r) => r.json())
+    .then((response) => {
+      alert("Votre compte est pré-enregistré. Nous revenons vers vous très rapidement.")
+      location.href = '/'
+    })
+    .catch((e) => alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter."))
+  })
 </script>
 
 <style>
