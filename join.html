@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Annuaire thérapeutes — Terrapeutes</title>
+
+<meta name="description" value="Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/polight/decor@master/decor.css">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<header class="row spaced">
+  <h1>
+    <a href="/"><img alt="Thérapeutes" src="//etceterra.github.io/terrapeutes-pro/assets/img/logo.png">
+    pro</a>
+  </h1>
+  <nav class=secondary>
+  <!--
+    <a>Réseau de thérapeutes</a>
+    <a>Adhérer au réseau</a>
+    <a>Nous contacter</a>
+  </nav> -->
+</header>
+
+<main>
+  <section class=highlight>
+    <h2><i class="fas fa-file-signature"></i> Inscription au réseau</h2>
+    <p>
+      En renseignant vos informations professionnelles vous pourrez inscrire votre activité dans notre <strong>réseau
+      de thérapeutes</strong>.<br>
+      Vous bénéficiez ainsi d'un maximum de visibilité et augmentez vos rencontres de nouveaux clients.
+    </p>
+    <p>
+      Vous pourrez proposer davantage d'informations à vos futurs clients dès votre inscription.
+    </p>
+  </section>
+
+  <form method="post">
+    <fieldset>
+      <legend><i class="fas fa-user"></i> À propos de vous</legend>
+      <div class=row>
+        <input name="first_name" placeholder="Prénom" required>
+        <input name="last_name" placeholder="Nom" required>
+      </div>
+      <input type="email" name="email" placeholder="Adresse email" required>
+    </fieldset>
+
+    <fieldset>
+      <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
+      <div class=row>
+        <select name="activity" required onchange="selectActivity(this)">
+          <option value="naturopathie">Naturopathie</option>
+          <option value="coaching">Coaching de vie</option>
+          <option value="accupressing">Accupressing</option>
+          <option value="medecine-chinoise">Médecine chinoise</option>
+          <option value="other">Préciser…</option>
+        </select>
+        <input name="activity-other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
+      </div>
+      <div class="row">
+        <input type="email" name="email" placeholder="Adresse email professionnelle" required>
+        <input type="tel" name="phone" placeholder="Numéro de téléphone professionel" required>
+      </div>
+      <label class=row>
+        <input type="checkbox" name="certified" required>
+        <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend><i class="fas fa-info"></i> Informations complémentaires</legend>
+      <textarea class=row name="comment" placeholder="À propos de mon adhésion"></textarea>
+    </fieldset>
+
+    <button class=primary>Terminer mon inscription ></button>
+  </form>
+</main>
+
+<script>
+  const otherActivity = document.querySelector('[name="activity-other"]')
+  function selectActivity(selector) {
+    otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden';
+  }
+</script>
+
+<style>
+  form {
+    margin: 3rem auto;
+  }
+  .hidden {
+    display: none;
+  }
+</style>
