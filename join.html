@@ -70,12 +70,24 @@
       <textarea class=row name="comment" placeholder="À propos de mon adhésion"></textarea>
     </fieldset>
 
-    <button class=primary>Terminer mon inscription ></button>
+    <label class=row>
+      <input type="checkbox" id=consent required>
+      J'accepte les conditions générales d'utilisations du réseau Terrapeutes et l'utilisation de mes données à des fins d'information.
+    </label>
+
+    <button class=primary id=submit disabled>Terminer mon inscription ></button>
   </form>
 </main>
 
 <script>
   const otherActivity = document.querySelector('[name="therapy_other"]')
+
+  const consent = document.querySelector('#consent')
+  const submitButton = document.querySelector('#submit')
+  consent.addEventListener('change', (e) => {
+    const method = e.currentTarget.checked ? 'removeAttribute' : 'setAttribute'
+    submitButton[method]('disabled', true)
+  })
 
   function selectActivity(selector) {
     otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden'

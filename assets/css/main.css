@@ -35,6 +35,18 @@ a.button.primary {
   border: 0;
 }
 
+button[disabled],
+.button[disabled] {
+  cursor: not-allowed;
+  background-color: #999;
+}
+
+section.highlight .button.primary {
+  background-color: #fff;
+  color: #68b246;
+  font-weight: bold;
+}
+
 header {
   padding: 1rem 5rem;
   background-color: #fff;
