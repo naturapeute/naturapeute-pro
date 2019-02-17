@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Annuaire thérapeutes — Terrapeutes</title>
+
+<meta name="description" value="Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/polight/decor@master/decor.css">
+<link rel="stylesheet" href="./assets/css/main.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<header class="row spaced">
+  <h1>
+    <a href="/"><img alt="Thérapeutes" src="//etceterra.github.io/terrapeutes-pro/assets/img/logo.png">
+    pro</a>
+  </h1>
+  <!--
+  <nav class=secondary>
+    <a>Réseau de thérapeutes</a>
+    <a>Adhérer au réseau</a>
+    <a>Nous contacter</a>
+  </nav> -->
+</header>
+
+<main>
+  <section class=highlight>
+    <h2><i class="fas fa-check-circle"></i> Bienvenue, vous êtes maintenant inscrit•e !</h2>
+    <p>
+      Vous pouvez maintenant compléter votre fiche ou le faire plus tard.<br>
+      La confiance de vos clients dépend notamment de la qualité de votre fiche.
+    </p>
+  </section>
+
+  <form method="post">
+    <fieldset>
+      <legend>Quelques détails sur vous</legend>
+        <textarea class=row name="introduction" placeholder="Quelques renseignements sur mon approche et mes méthodes"></textarea>
+        <textarea class=row name="certification" placeholder="Mes diplômes et certifications en bref"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend><i class="fas fa-info"></i> Présentation de mes soins thérapeutiques</legend>
+      <input type=number name=price placeholder="Prix TTC par préstation en CHF">
+    </fieldset>
+
+    <button class=primary>Terminer mon inscription</button>
+  </form>
+</main>
+
+<script>
+
+  document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const fields = {}
+    Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
+    fields.price = fields.price && Number(fields.price)
+    fetch(`https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Table%201/${location.search.split('=')[1]}`, {
+      headers: {
+        'Authorization': 'Bearer key7TSHb7BPpx1jts',
+        'Content-Type': 'application/json',
+      },
+      method: 'patch',
+      mode: 'cors',
+      body: JSON.stringify({ fields })
+    })
+    .then((r) => r.json())
+    .then((data) => {
+      if(!data.id) return console.error(data)
+      alert("Votre fiche est complétée, nous revenons vers vous dans les prochains jours.")
+      location.href = '/'
+    })
+    .catch((e) => {
+      console.error(e)
+      alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter.")
+    })
+  })
+</script>
+
+<style>
+  form {
+    margin: 3rem auto;
+  }
+  .hidden {
+    display: none;
+  }
+</style>

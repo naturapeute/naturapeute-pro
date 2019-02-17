@@ -23,7 +23,7 @@
 
 <main>
   <section class=highlight>
-    <h2><i class="fas fa-file-signature"></i> Inscription au réseau</h2>
+    <h2><i class="fas fa-handshake"></i> Inscription au réseau</h2>
     <p>
       En renseignant vos informations professionnelles vous pourrez inscrire votre activité dans notre <strong>réseau
       de thérapeutes</strong>.<br>
@@ -75,7 +75,7 @@
 </main>
 
 <script>
-  const otherActivity = document.querySelector('[name="activity-other"]')
+  const otherActivity = document.querySelector('[name="therapy_other"]')
 
   function selectActivity(selector) {
     otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden'
@@ -96,9 +96,12 @@
       body: JSON.stringify({ fields })
     })
     .then((r) => r.json())
-    .then((response) => {
-      alert("Votre compte est pré-enregistré. Nous revenons vers vous très rapidement.")
-      location.href = '/'
+    .then((data) => {
+      if(data.id) location.href = `/join-details.html?id=${data.id}`
+      else {
+        alert("Une erreur est survenue. Merci de nous contacter.")
+        console.error(data)
+      }
     })
     .catch((e) => alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter."))
   })
