@@ -41,26 +41,39 @@ show_join: false
     const fields = {}
     Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
     fields.price = fields.price && Number(fields.price)
-    fetch(`https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Table%201/${location.search.split('=')[1]}`, {
-      headers: {
-        'Authorization': 'Bearer key7TSHb7BPpx1jts',
-        'Content-Type': 'application/json',
-      },
-      method: 'patch',
-      mode: 'cors',
-      body: JSON.stringify({ fields })
-    })
-    .then((r) => r.json())
-    .then((data) => {
-      if(!data.id) return console.error(data)
-      alert("Votre fiche est complétée, nous revenons vers vous dans les prochains jours.")
-      location.href = '/'
-    })
-    .catch((e) => {
-      console.error(e)
-      alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter.")
+    var Airtable = require('airtable');
+    var base = new Airtable({apiKey: 'key7TSHb7BPpx1jts'}).base('app1Ab6PilgNTXMYp');
+
+    base('Table 1').update(location.search.split('=')[1], fields, (err, record) => {
+        if (err) {
+          alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter.")
+          return console.error(err)
+        }
+        alert("Votre fiche est complétée, nous revenons vers vous dans les prochains jours.")
+        location.href = '/'
     })
   })
+
+    // fetch(`http://api.airtable.com/v0/app1Ab6PilgNTXMYp/Table%201/${location.search.split('=')[1]}`, {
+    //   headers: {
+    //     'Authorization': 'Bearer key7TSHb7BPpx1jts',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   method: 'PATCH',
+    //   mode: 'cors',
+    //   credentials: 'include',
+    //   body: JSON.stringify({ fields })
+    // })
+    // .then((r) => r.json())
+    // .then((data) => {
+    //   if(!data.id) return console.error(data)
+    //   alert("Votre fiche est complétée, nous revenons vers vous dans les prochains jours.")
+    //   location.href = '/'
+    // })
+    // .catch((e) => {
+    //   console.error(e)
+    //   alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter.")
+    // })
 </script>
 
 <style>
