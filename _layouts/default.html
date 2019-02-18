@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Annuaire thérapeutes — Terrapeutes</title>
+<meta name="description" value="Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<header class="row spaced">
+  <h1>
+    <a href="/">
+      <img alt="Thérapeutes" src="/assets/img/logo.png">
+      pro
+    </a>
+  </h1>
+  <nav class=secondary>
+  <!--
+    <a>Réseau de thérapeutes</a>
+    <a>Adhérer au réseau</a>
+    <a>Nous contacter</a>
+     -->
+    {% if page.show_join %}
+    <a class="button primary" href="/join">Rejoindre ></a>
+    {% endif %}
+  </nav>
+</header>
+
+<main>
+  {{ content }}
+</main>
+
+<footer class=row>
+  <p>
+    <a href=http://terrapeutes.com>Terrapeutes</a> est un projet de <a href=http://www.mesurebienetre.com target=_blank>Mesure Bien Être</a>, SARL déposée en Suisse.
+  </p>
+  <div class=secondary>
+    <a href="mailto:terrapeutes@protonmail.com">Nous contacter</a>
+  </div>
+</footer>

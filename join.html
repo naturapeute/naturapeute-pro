@@ -1,92 +1,64 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<title>Annuaire thérapeutes — Terrapeutes</title>
+---
+layout: default
+show_join: false
+---
 
-<meta name="description" value="Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/polight/decor@master/decor.css">
-<link rel="stylesheet" href="./assets/css/main.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-
-<header class="row spaced">
-  <h1>
-    <a href="/"><img alt="Thérapeutes" src="//etceterra.github.io/terrapeutes-pro/assets/img/logo.png">
-    pro</a>
-  </h1>
-  <!--
-  <nav class=secondary>
-    <a>Réseau de thérapeutes</a>
-    <a>Adhérer au réseau</a>
-    <a>Nous contacter</a>
-  </nav> -->
-</header>
-
-<main>
-  <section class=highlight>
-    <h2><i class="fas fa-handshake"></i> Inscription au réseau</h2>
-    <p>
-      En renseignant vos informations professionnelles vous pourrez inscrire votre activité dans notre <strong>réseau
-      de thérapeutes</strong>.<br>
-      Vous bénéficiez ainsi d'un maximum de visibilité et augmentez vos rencontres de nouveaux clients.
-    </p>
-    <p>
-      Vous pourrez proposer davantage d'informations à vos futurs clients dès votre inscription.
-    </p>
-  </section>
-
-  <form method="post">
-    <fieldset>
-      <legend><i class="fas fa-user"></i> À propos de vous</legend>
-      <div class=row>
-        <input name="firstname" placeholder="Prénom" required>
-        <input name="lastname" placeholder="Nom" required>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
-      <div class=row>
-        <select name="therapy" required onchange="selectActivity(this)">
-          <option value="naturopathie">Naturopathie</option>
-          <option value="coaching">Coaching de vie</option>
-          <option value="accupressing">Accupressing</option>
-          <option value="medecine-chinoise">Médecine chinoise</option>
-          <option value="other">Autre, préciser…</option>
-        </select>
-        <input name="therapy_other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
-      </div>
-      <div class="row">
-        <input type="email" name="email" placeholder="Adresse email professionnelle" required>
-        <input type="tel" name="phone" placeholder="Numéro de téléphone professionel" required>
-      </div>
-      <label class=row>
-        <input type="checkbox" name="is_certified" value="1" required>
-        <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
-      </label>
-    </fieldset>
-
-    <fieldset>
-      <legend><i class="fas fa-info"></i> Informations complémentaires</legend>
-      <textarea class=row name="comment" placeholder="À propos de mon adhésion"></textarea>
-    </fieldset>
-
-    <label class=row>
-      <input type="checkbox" id=consent required>
-      J'accepte les conditions générales d'utilisations du réseau Terrapeutes et l'utilisation de mes données à des fins d'information.
-    </label>
-
-    <button class=primary id=submit disabled>Terminer mon inscription ></button>
-  </form>
-</main>
-
-<footer class=row>
+<section class=highlight>
+  <h2><i class="fas fa-handshake"></i> Inscription au réseau</h2>
   <p>
-    <a href=http://terrapeutes.com>Terrapeutes</a> est un projet de <a href=http://www.mesurebienetre.com target=_blank>Mesure Bien Être</a>, SARL déposée en Suisse.
+    En renseignant vos informations professionnelles vous pourrez inscrire votre activité dans notre <strong>réseau
+    de thérapeutes</strong>.<br>
+    Vous bénéficiez ainsi d'un maximum de visibilité et augmentez vos rencontres de nouveaux clients.
   </p>
-  <div class=secondary>
-    <a href="mailto:terrapeutes@protonmail.com">Nous contacter</a>
-  </div>
-</footer>
+  <p>
+    Vous pourrez proposer davantage d'informations à vos futurs clients dès votre inscription.
+  </p>
+</section>
+
+<form method="post">
+  <fieldset>
+    <legend><i class="fas fa-user"></i> À propos de vous</legend>
+    <div class=row>
+      <input name="firstname" placeholder="Prénom" required>
+      <input name="lastname" placeholder="Nom" required>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
+    <div class=row>
+      <select name="therapy" required onchange="selectActivity(this)">
+        <option value="naturopathie">Naturopathie</option>
+        <option value="coaching">Coaching de vie</option>
+        <option value="accupressing">Accupressing</option>
+        <option value="medecine-chinoise">Médecine chinoise</option>
+        <option value="other">Autre, préciser…</option>
+      </select>
+      <input name="therapy_other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
+    </div>
+    <div class="row">
+      <input type="email" name="email" placeholder="Adresse email professionnelle" required>
+      <input type="tel" name="phone" placeholder="Numéro de téléphone professionel" required>
+    </div>
+    <label class=row>
+      <input type="checkbox" name="is_certified" value="1" required>
+      <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend><i class="fas fa-info"></i> Informations complémentaires</legend>
+    <textarea class=row name="comment" placeholder="À propos de mon adhésion"></textarea>
+  </fieldset>
+
+  <label class=row>
+    <input type="checkbox" id=consent required>
+    J'accepte les conditions générales d'utilisations du réseau Terrapeutes et l'utilisation de mes données à des fins d'information.
+  </label>
+
+  <button class=primary id=submit disabled>Terminer mon inscription ></button>
+</form>
+
 
 <script>
   const otherActivity = document.querySelector('[name="therapy_other"]')
