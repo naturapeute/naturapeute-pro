@@ -83,3 +83,20 @@ section.highlight {
   color: white;
   text-align: center;
 }
+
+body > footer {
+  padding: 2rem 5rem;
+  font-size: .8rem;
+  justify-content: space-around;
+  box-shadow: 0 -3px 5px #eee;
+  margin: 0 !important;
+}
+
+body > footer a {
+  font: inherit;
+  color: inherit;
+}
+
+body > footer .secondary {
+  text-align: right;
+}

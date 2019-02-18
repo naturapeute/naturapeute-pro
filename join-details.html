@@ -23,27 +23,46 @@
 
 <main>
   <section class=highlight>
-    <h2><i class="fas fa-check-circle"></i> Bienvenue, vous êtes maintenant inscrit•e !</h2>
+    <h2><i class="fas fa-check-circle"></i> Bienvenue, vous êtes désormais inscrit•e !</h2>
     <p>
-      Vous pouvez maintenant compléter votre fiche ou le faire plus tard.<br>
+      Vous pouvez dès à présent compléter votre fiche ou le faire plus tard.<br>
       La confiance de vos clients dépend notamment de la qualité de votre fiche.
     </p>
   </section>
 
   <form method="post">
     <fieldset>
-      <legend>Quelques détails sur vous</legend>
-        <textarea class=row name="introduction" placeholder="Quelques renseignements sur mon approche et mes méthodes"></textarea>
-        <textarea class=row name="certification" placeholder="Mes diplômes et certifications en bref"></textarea>
-    </fieldset>
-    <fieldset>
-      <legend><i class="fas fa-info"></i> Présentation de mes soins thérapeutiques</legend>
-      <input type=number name=price placeholder="Prix TTC par préstation en CHF">
+      <legend><i class="fas fa-map-marker-alt"></i> Adresse de votre établissement</legend>
+      <input class=row type="text" name="street" placeholder="Rue et numéro" required>
+        <div class="row">
+        <input type="text" name="zipcode" placeholder="Code postal" required>
+        <input type="text" name="city" placeholder="Ville" required>
+      </div>
+      <select class=row name=country disabled>
+        <option value=ch>Suisse</option>
+      </select>
     </fieldset>
 
-    <button class=primary>Terminer mon inscription</button>
+    <fieldset>
+      <legend><i class="fas fa-hands"></i> Votre méthode</legend>
+        <textarea class=row name="introduction" placeholder="Votre approche et soins"></textarea>
+        <textarea class=row name="certification" placeholder="Vos agréements, diplômes, certifications (ASCA, RME …)"></textarea>
+      <input type=number name=price placeholder="Prix TTC par préstation (en CHF)">
+      <textarea class=row name=timetable placeholder="Horaires d'ouverture"></textarea>
+    </fieldset>
+
+    <button class=primary>Enregistrer</button>
   </form>
 </main>
+
+<footer class=row>
+  <p>
+    <a href=http://terrapeutes.com>Terrapeutes</a> est un projet de <a href=http://www.mesurebienetre.com target=_blank>Mesure Bien Être</a>, SARL déposée en Suisse.
+  </p>
+  <div class=secondary>
+    <a href="mailto:terrapeutes@protonmail.com">Nous contacter</a>
+  </div>
+</footer>
 
 <script>
 
