@@ -103,3 +103,6 @@ body > footer a {
 body > footer .secondary {
   text-align: right;
 }
+body > footer .secondary a:not(:last-of-type) {
+  margin-right: .88rem;
+}
