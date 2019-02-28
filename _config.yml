@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Réseau de terrapeutes en Suisse — Terrapeutes
-email: terrapeutes@protonmail.com
+email: contact@terrapeutes.com
 description: >- # this means to ignore newlines until "baseurl:"
   Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de
   thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.

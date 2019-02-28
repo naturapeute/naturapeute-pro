@@ -76,11 +76,11 @@ MESURE BIEN ÊTRE peut communiquer les Données personnelles de l’Utilisateur 
 
 ## e.     Accès aux données collectées
 
-L’Utilisateur peut demander l’accès à ses Données personnelles afin de modifier ou supprimer les données collectées par MESURE BIEN ÊTRE dans le cadre de son utilisation du Site internet et de la Plate-forme terrapeutes.com en tout temps, en envoyant un email à terrapeutes@protonmail.com. L’utilisateur peut également nous demander de ne pas traiter ses Données à caractère personnel à des fins de commercialisation.
+L’Utilisateur peut demander l’accès à ses Données personnelles afin de modifier ou supprimer les données collectées par MESURE BIEN ÊTRE dans le cadre de son utilisation du Site internet et de la Plate-forme terrapeutes.com en tout temps, en envoyant un email à contact@terrapeutes.com. L’utilisateur peut également nous demander de ne pas traiter ses Données à caractère personnel à des fins de commercialisation.
 
 ## f.       Questions
 
-Toutes questions ou plaintes concernant la collecte et le traitement de vos données personnelles par MESURE BIEN ÊTRE doit être formulée auprès du Conseiller à la Protection des Données de MESURE BIEN ÊTRE (terrapeutes@protonmail.com).
+Toutes questions ou plaintes concernant la collecte et le traitement de vos données personnelles par MESURE BIEN ÊTRE doit être formulée auprès du Conseiller à la Protection des Données de MESURE BIEN ÊTRE (contact@terrapeutes.com).
 
 Cette Politique de Confidentialité est effective dès le 01/01/2019
 
