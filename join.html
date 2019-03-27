@@ -44,8 +44,9 @@ show_join: false
     </div>
     <div class="row">
       <input type="email" name="email" placeholder="Adresse email professionnelle" required>
-      <input type="tel" name="phone" placeholder="Numéro de téléphone professionel" required>
+      <input type="tel" name="phone" placeholder="Numéro de téléphone professionel">
     </div>
+    <input name="address" placeholder="Adresse du cabinet / ville">
     <label class=row>
       <input type="checkbox" name="is_certified" value="1" required>
       <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
@@ -54,7 +55,7 @@ show_join: false
 
   <fieldset>
     <legend><i class="fas fa-info"></i> Informations complémentaires</legend>
-    <textarea class=row name="comment" placeholder="À propos de mon adhésion"></textarea>
+    <textarea class=row name="comment" placeholder="Autres informations optionnelles"></textarea>
   </fieldset>
 
   <label class=row>
@@ -85,7 +86,7 @@ show_join: false
     const fields = {}
     Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
     fields.is_certified = !!fields.is_certified
-    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Table%201', {
+    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Preinscriptions', {
       headers: {
         'Authorization': 'Bearer key7TSHb7BPpx1jts',
         'Content-Type': 'application/json',
