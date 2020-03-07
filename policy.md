@@ -55,6 +55,8 @@ La Plateforme Terrapeutes.com met à disposition un service basé sur la recherc
 
 Le coût de ce service a été fixé à 12,90 Frs par mois ou 120 Frs par an selon votre choix.
 
+Une offre gratuite est disponible. Celle-ci est révocable par Terrapeute.ch à tout moment, et la continuité de son service n'est pas garanti.
+
 Concernant les prélèvements mensuels, il n’y a pas d’engagement. Vous pourrez résilier votre abonnement avant le 15 de chaque mois pour ne plus être prélevé le mois suivant. Cela nous laisse ainsi le temps de procéder à cette dédite.
 
 Concernant votre engagement Annuel, vous pourrez résilier votre abonnement 2 mois avant la date anniversaire. La somme réglée restera néanmoins dû et non remboursable. Vous continuerez à apparaître sur notre réseau jusqu’à échéance.
