@@ -1,0 +1,46 @@
+<script>
+  init() {
+    this.state = {
+      page: 'dashboard'
+    }
+  }
+
+  connected() {
+    page('/', () => this.state.page = 'dashboard')
+    page('/dashboard', () => this.state.page = 'dashboard')
+    page('/profile', () => this.state.page = 'profile')
+    page('/patients', () => this.state.page = 'patients')
+    page.start({ hashbang: true })
+  }
+</script>
+
+<template>
+  <div class="sidebar-fixed position-fixed">
+
+    <a class="logo-wrapper waves-effect">
+      <img src="./img/terrapeute enseigne vertica.svg" class="img-fluid" alt="Terrapeute pro" style="max-height:inherit;">
+    </a>
+
+    <nav class="list-group list-group-flush">
+      <a href="/dashboard" class="${state.page == 'dashboard' && 'active'} list-group-item waves-effect">
+        <i class="fas fa-chart-pie mr-3"></i>Tableau de bord
+      </a>
+      <a href="/profile" class="${state.page == 'profile' && 'active'} list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-user mr-3"></i>Mon compte
+      </a>
+      <a href="/patients" class="${state.page == 'patients' && 'active'} list-group-item list-group-item-action waves-effect">
+        <i class="fas fa-user mr-3"></i>Mes clients
+      </a>
+    </nav>
+  </div>
+
+  <main class="pt-5 mx-lg-5">
+    <page-dashboard :if="state.page == 'dashboard'"></page-dashboard>
+    <page-profile :if="state.page == 'profile'"></page-profile>
+    <page-patients :if="state.page == 'patients'"></page-patients>
+  </main>
+</template>
+
+<style>
+  @import url('/app/css/main.css');
+</style>
