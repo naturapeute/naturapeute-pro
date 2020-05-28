@@ -123,7 +123,9 @@ class PageProfile extends Component {
 ])
 ])
 ]),
-    h("button", {"class": `btn btn-info btn-block`, "type": `submit`}, `Enregistrer`)
+    h("footer", {}, [
+    h("button", {"class": `btn btn-info`, "type": `submit`}, `Enregistrer`)
+])
 ])]
   }
   get vstyle() {
@@ -132,7 +134,22 @@ class PageProfile extends Component {
   `)}
   async init() {
     this.state = {
-      profile: {languages: [], socials: [], therapies: [], agreements: [], payments: []},
+      profile: {
+        languages: [],
+        socials: [],
+        therapies: [],
+        agreements: [],
+        payments: [],
+        offices: [],
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        website: '',
+        description: '',
+        price: '',
+        timetable: '',
+      },
       therapies: [
         { value: "acupuncture", name: "Acupuncture" },
         { value: "approche-psycho-corporelle", name: "Approche Psycho-Corporelle" },
@@ -194,7 +211,7 @@ class PageProfile extends Component {
       agreements: ['ASCA', 'RME'],
     }
 
-    const response = await fetch(`https://terrapeute.ch/api/therapist/mesurebienetre@gmail.com`)
+    const response = await fetch(`https://naturapeute.ch/api/therapist/mesurebienetre@gmail.com`)
     if(!response.ok) return
     this.state.profile = Object.assign(this.state.profile, await response.json())
   }

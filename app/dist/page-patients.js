@@ -35,7 +35,7 @@ class PagePatients extends Component {
       clients: []
     }
 
-    const response = await fetch(`https://terrapeute.ch/api/therapist/mesurebienetre@gmail.com`)
+    const response = await fetch(`https://naturapeute.ch/api/therapist/mesurebienetre@gmail.com`)
     if(!response.ok) return
     const json = await response.json()
     this.state.clients = json.extraData.patients

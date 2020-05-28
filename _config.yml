@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Réseau de terrapeutes en Suisse — Terrapeutes
-email: contact@terrapeutes.com
+title: Réseau de naturapeutes en Suisse — Naturapeutes
+email: contact@naturapeutes.com
 description: >- # this means to ignore newlines until "baseurl:"
   Annuaire et réseau des thérapeutes en Suisse. Augmentez votre visibilité de
   thérapeute en partageant votre thérapie complémentaire ou alternative en Suisse.

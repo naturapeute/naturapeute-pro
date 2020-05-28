@@ -6,7 +6,7 @@ class XApp extends Component {
     return ({ state }) => [
   h("div", {"class": `sidebar-fixed position-fixed`}, [
     h("a", {"class": `logo-wrapper waves-effect`}, [
-    h("img", {"src": `./img/terrapeute enseigne vertica.svg`, "class": `img-fluid`, "alt": `Terrapeute pro`, "style": `max-height:inherit;`}, "")
+    h("img", {"src": `./img/naturapeute enseigne vertica.svg`, "class": `img-fluid`, "alt": `Naturapeute pro`, "style": `max-height:inherit;`}, "")
 ]),
     h("nav", {"class": `list-group list-group-flush`}, [
     h("a", {"href": `/dashboard`, "class": `${state.page == 'dashboard' && 'active'} list-group-item waves-effect`}, [

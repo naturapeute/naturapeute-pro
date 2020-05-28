@@ -2,16 +2,16 @@
 layout: default
 ---
 
-# Conditions additionnelles applicables à l’utilisation de la Plateforme « Terrapeutes.com » par les Praticiens
+# Conditions additionnelles applicables à l’utilisation de la Plateforme « Naturapeute.ch » par les Praticiens
 
 
-L’accès et l’utilisation du site (terrapeutes.com), y compris ses sous-domaines, et tous les autres sites par le biais desquels la société Mesure Bien Être SARL fournit ses services (collectivement, le « Site »), nos applications pour mobiles, tablettes et smartphones (collectivement, l’« Application ») ainsi que tous les services associés (collectivement, les « Services ») sont régis par les Conditions de Service.
+L’accès et l’utilisation du site (naturapeutes.com), y compris ses sous-domaines, et tous les autres sites par le biais desquels la société Mesure Bien Être SARL fournit ses services (collectivement, le « Site »), nos applications pour mobiles, tablettes et smartphones (collectivement, l’« Application ») ainsi que tous les services associés (collectivement, les « Services ») sont régis par les Conditions de Service.
 
-Les présentes Conditions additionnelles ont pour objectif de définir les modalités et conditions spéciales applicables à l’utilisation par le Praticien de la Plateforme « Terrapeutes.com ».
+Les présentes Conditions additionnelles ont pour objectif de définir les modalités et conditions spéciales applicables à l’utilisation par le Praticien de la Plateforme « Naturapeute.ch ».
 
 ### Conditions d'admissibilité
 
-Afin de pouvoir s’inscrire sur la plateforme « Terrapeutes.com » en qualité de Praticien, l’Utilisateur doit impérativement remplir les conditions d’admissibilité suivantes :
+Afin de pouvoir s’inscrire sur la plateforme « Naturapeute.ch » en qualité de Praticien, l’Utilisateur doit impérativement remplir les conditions d’admissibilité suivantes :
 
 Détenir un diplôme professionnel ou une formation jugée équivalente justifiant votre qualification dans les domaines de la santé, du bien-être ou de l'esthétisme ;
 
@@ -39,23 +39,23 @@ Le Praticien atteste et garantit à Mesure Bien-Être que les informations soumi
 
 #### En général
 
-Les prestations proposées sur la Plateforme Terrapeutes.com sont celles définies lors de l'inscription du praticien, correspondant à ses (sa) qualifications et qui auront été validées par la plate-forme en fonction des documents fournis lors de son inscription.
+Les prestations proposées sur la Plateforme Naturapeute.ch sont celles définies lors de l'inscription du praticien, correspondant à ses (sa) qualifications et qui auront été validées par la plate-forme en fonction des documents fournis lors de son inscription.
 
 #### Evaluations
 
-La Plateforme Terrapeutes.com donne la possibilité à chaque client de noter le praticien sur la manière dont il a perçu son soin.
+La Plateforme Naturapeute.ch donne la possibilité à chaque client de noter le praticien sur la manière dont il a perçu son soin.
 
 #### Zone d’intervention
 
-La Plateforme Terrapeutes.com met à disposition un service basé sur les technologies de géolocalisation  afin de faciliter la recherche d’un thérapeute dans une zone géographique donnée.
-La Plateforme Terrapeutes.com met à disposition un service basé sur la recherche d’un thérapeute via une symptomatologie.
+La Plateforme Naturapeute.ch met à disposition un service basé sur les technologies de géolocalisation  afin de faciliter la recherche d’un thérapeute dans une zone géographique donnée.
+La Plateforme Naturapeute.ch met à disposition un service basé sur la recherche d’un thérapeute via une symptomatologie.
 
 
 ### Prix et conditions financières
 
 Le coût de ce service a été fixé à 12,90 Frs par mois ou 120 Frs par an selon votre choix.
 
-Une offre gratuite est disponible. Celle-ci est révocable par Terrapeute.ch à tout moment, et la continuité de son service n'est pas garanti.
+Une offre gratuite est disponible. Celle-ci est révocable par Naturapeute.ch à tout moment, et la continuité de son service n'est pas garanti.
 
 Concernant les prélèvements mensuels, il n’y a pas d’engagement. Vous pourrez résilier votre abonnement avant le 15 de chaque mois pour ne plus être prélevé le mois suivant. Cela nous laisse ainsi le temps de procéder à cette dédite.
 
