@@ -29,7 +29,8 @@ class XApp extends Component {
   h("main", {"class": `pt-5 mx-lg-5`}, [
     ((state.page == 'dashboard') ? h("page-dashboard", {}, "") : ''),
     ((state.page == 'profile') ? h("page-profile", {}, "") : ''),
-    ((state.page == 'patients') ? h("page-patients", {}, "") : '')
+    ((state.page == 'patients') ? h("page-patients", {}, "") : ''),
+    ((state.page == 'patient') ? h("page-patient", {"id": state.id}, "") : '')
 ])]
   }
   get vstyle() {
@@ -38,7 +39,8 @@ class XApp extends Component {
   `)}
   init() {
     this.state = {
-      page: 'dashboard'
+      page: 'dashboard',
+      patient: {},
     }
   }
 
@@ -47,6 +49,10 @@ class XApp extends Component {
     page('/dashboard', () => this.state.page = 'dashboard')
     page('/profile', () => this.state.page = 'profile')
     page('/patients', () => this.state.page = 'patients')
+    page('/patient/:id', (req) => {
+      this.state.id = req.params.id
+      this.state.page = 'patient'
+    })
     page.start({ hashbang: true })
   }
 }

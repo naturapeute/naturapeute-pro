@@ -11,14 +11,8 @@ class PagePatients extends Component {
     h("div", {"class": `row`}, [
     ((state.clients).map((client) => (h("div", {"class": `col-lg-4 col-sm-6 mb-5`}, [
     h("div", {"class": `row d-flex align-items-center`}, [
-    h("div", {"class": `col-5 avatar w-100 white d-flex justify-content-center align-items-center`}, [
-    h("img", {"src": `https://www.gravatar.com/avatar/${md5(client.email)}`, "class": `img-fluid rounded-circle z-depth-1`}, "")
-]),
-    h("div", {"class": `col-7`}, [
-    h("h6", {"class": `font-weight-bold pt-2`}, `${client.firstName} ${client.lastName}`),
-    h("p", {"class": `text-muted`}, `
-                ${(new Date(client.birthdate)).toLocaleDateString()}
-              `)
+    h("a", {"href": `#!/patient/${client.id}`}, [
+    h("x-avatar", {"date": client.birthdate, "name": client.name, "image": `https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg`}, "")
 ])
 ])
 ]))))
@@ -38,7 +32,10 @@ class PagePatients extends Component {
     const response = await fetch(`https://naturapeute.ch/api/therapist/mesurebienetre@gmail.com`)
     if(!response.ok) return
     const json = await response.json()
-    this.state.clients = json.extraData.patients
+    this.state.clients = json.extraData.patients.map(p => {
+      p.name = `${p.firstName} ${p.lastName}`
+      return p
+    })
   }
 }
 

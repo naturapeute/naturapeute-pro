@@ -1,7 +1,8 @@
 <script>
   init() {
     this.state = {
-      page: 'dashboard'
+      page: 'dashboard',
+      patient: {},
     }
   }
 
@@ -10,6 +11,10 @@
     page('/dashboard', () => this.state.page = 'dashboard')
     page('/profile', () => this.state.page = 'profile')
     page('/patients', () => this.state.page = 'patients')
+    page('/patient/:id', (req) => {
+      this.state.id = req.params.id
+      this.state.page = 'patient'
+    })
     page.start({ hashbang: true })
   }
 </script>
@@ -38,6 +43,7 @@
     <page-dashboard :if="state.page == 'dashboard'"></page-dashboard>
     <page-profile :if="state.page == 'profile'"></page-profile>
     <page-patients :if="state.page == 'patients'"></page-patients>
+    <page-patient :if="state.page == 'patient'" :id="state.id"></page-patient>
   </main>
 </template>
 
