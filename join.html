@@ -86,7 +86,7 @@ show_join: false
     const fields = {}
     Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
     fields.is_certified = !!fields.is_certified
-    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Preinscriptions', {
+    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Pré-inscriptions', {
       headers: {
         'Authorization': 'Bearer key7TSHb7BPpx1jts',
         'Content-Type': 'application/json',
