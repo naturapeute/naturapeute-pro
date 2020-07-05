@@ -86,24 +86,22 @@ show_join: false
     const fields = {}
     Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
     fields.is_certified = !!fields.is_certified
-    fetch('https://api.airtable.com/v0/app1Ab6PilgNTXMYp/Preinscriptions', {
+    fetch('https://getform.io/f/a47ca3ea-b8f4-4a9e-a42b-0d4ce387891d', {
       headers: {
-        'Authorization': 'Bearer key7TSHb7BPpx1jts',
         'Content-Type': 'application/json',
       },
       method: 'post',
       mode: 'cors',
       body: JSON.stringify({ fields })
     })
-    .then((r) => r.json())
-    .then((data) => {
+    .then(response => {
+      if(!response.ok) {
+        alert("Une erreur est survenue. Merci de nous contacter.")
+        return console.error(data)
+      }
       // if(data.id) location.href = `/join-details.html?id=${data.id}`
       alert("Vos informations sont bien enregistrées. Nous vous recontacterons rapidement.")
-      if(data.id) location.href = '/'
-      else {
-        alert("Une erreur est survenue. Merci de nous contacter.")
-        console.error(data)
-      }
+      location.href = '/'
     })
     .catch((e) => alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter."))
   })
