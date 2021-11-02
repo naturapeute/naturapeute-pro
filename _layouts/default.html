@@ -7,22 +7,20 @@
 <script src=https://cdn.jsdelivr.net/gh/airtable/airtable.js@master/build/airtable.browser.js></script>
 
 <header class="row spaced">
-  <h1>
-    <a href="/">
-      <img alt="Thérapeutes" src="https://naturapeute.ch/img/naturapeute-enseigne.png">
-    </a>
-  </h1>
-  <nav class=secondary>
-  <!--
-    <a>Réseau de thérapeutes</a>
-    <a>Adhérer au réseau</a>
-    <a>Nous contacter</a>
-     -->
-    {% if page.show_join %}
-    <a class="button primary" href="/join">Rejoindre le réseau ></a>
-    {% endif %}
-  </nav>
+  <div class="container">
+    <h1>
+      <a href="/" title="Retour à l'accueil">
+        <img alt="Naturapeute.ch" src="https://naturapeute.ch/static/img/naturapeute-enseigne.png" height="35">
+      </a>
+    </h1>
+    <nav>
+      {% if page.show_join %}
+      <a class="button primary" href="/join">Rejoindre le réseau ></a>
+      {% endif %}
+    </nav>
+  </div>
 </header>
+
 
 <main>
   {{ content }}
