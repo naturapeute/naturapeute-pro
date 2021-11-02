@@ -28,6 +28,7 @@ show_join: false
     <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
     <div class=row>
       <select name="therapy" required onchange="selectActivity(this)">
+        <option value="faux compte">Je ne suis pas thérapeute</option>
         <option value="accupressing">Accupressing</option>
         <option value="coaching">Coaching de vie</option>
         <option value="drainage-lymphatique">Drainage Lymphatique</option>
@@ -45,6 +46,9 @@ show_join: false
     <div class="row">
       <input type="email" name="email" placeholder="Adresse email professionnelle" required>
       <input type="tel" name="phone" placeholder="Numéro de téléphone professionel">
+    </div>
+    <div class="row">
+      <input type="url" name="website" placeholder="Votre site internet">
     </div>
     <input name="address" placeholder="Adresse du cabinet / ville" required>
     <label class=row>
