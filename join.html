@@ -18,101 +18,9 @@ show_join: false
   </p>
 </article>
 
-<form method="post">
-  <fieldset>
-    <legend><i class="fas fa-user"></i> À propos de vous</legend>
-    <div class=row>
-      <input name="firstname" placeholder="Prénom" required>
-      <input name="lastname" placeholder="Nom" required>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend><i class="fas fa-medkit"></i> Votre activité thérapeutique</legend>
-    <div class=row>
-      <select name="therapy" required onchange="selectActivity(this)">
-        <option value="faux compte">Je ne suis pas thérapeute</option>
-        <option value="accupressing">Accupressing</option>
-        <option value="coaching">Coaching de vie</option>
-        <option value="drainage-lymphatique">Drainage Lymphatique</option>
-        <option value="massotherapie">Massothérapie</option>
-        <option value="medecine-chinoise">Médecine chinoise</option>
-        <option value="naturopathie">Naturopathie</option>
-        <option value="nutrition">Nutrition</option>
-        <option value="osteopathie">Ostéopathie</option>
-        <option value="pedicure">Pédicure</option>
-        <option value="reflexologie">Réflexologie</option>
-        <option value="other">Autre, préciser…</option>
-      </select>
-      <input name="therapy_other" placeholder="Renseignez la catégorie de cette activité" class=hidden>
-    </div>
-    <div class="row">
-      <input type="email" name="email" placeholder="Adresse email professionnelle" required>
-      <input type="tel" name="phone" placeholder="Numéro de téléphone professionel">
-    </div>
-    <div class="row">
-      <input type="url" name="website" placeholder="Votre site internet">
-    </div>
-    <input name="address" placeholder="Adresse du cabinet / ville" required>
-    <label class=row>
-      <input type="checkbox" name="is_certified" value="1" required>
-      <span>Je suis en possession d'une certification professionnelle pour la/les thérapie(s) que je propose sur ce réseau.</span>
-    </label>
-  </fieldset>
-
-  <fieldset>
-    <legend><i class="fas fa-info"></i> Informations complémentaires</legend>
-    <textarea class=row name="comment" placeholder="Autres informations optionnelles"></textarea>
-  </fieldset>
-
-  <label class=row>
-    <input type="checkbox" id=consent required>
-    <span>J'accepte les <a href="/policy.html" target=_blank style="display: inline">conditions générales d'utilisations</a> du réseau Naturapeutes et la <a href="/privacy.html" target=_blank style="display: inline">politique de confidentialité</a>.</span>
-  </label>
-
-  <button class=primary id=submit disabled>Terminer mon inscription ></button>
-</form>
-
-
-<script>
-  const otherActivity = document.querySelector('[name="therapy_other"]')
-
-  const consent = document.querySelector('#consent')
-  const submitButton = document.querySelector('#submit')
-  consent.addEventListener('change', (e) => {
-    const method = e.currentTarget.checked ? 'removeAttribute' : 'setAttribute'
-    submitButton[method]('disabled', true)
-  })
-
-  function selectActivity(selector) {
-    otherActivity.classList = selector.value === 'other' ? 'visible' : 'hidden'
-  }
-
-  document.querySelector('form').addEventListener('submit', (e) => {
-    e.preventDefault()
-    const fields = {}
-    Array.from(e.currentTarget.elements).filter(e => e.name).forEach(e => (fields[e.name] =  e.value))
-    fields.is_certified = !!fields.is_certified
-    fetch('https://getform.io/f/a47ca3ea-b8f4-4a9e-a42b-0d4ce387891d', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'post',
-      mode: 'cors',
-      body: JSON.stringify({ fields })
-    })
-    .then(response => {
-      if(!response.ok) {
-        alert("Une erreur est survenue. Merci de nous contacter.")
-        return console.error(data)
-      }
-      // if(data.id) location.href = `/join-details.html?id=${data.id}`
-      alert("Vos informations sont bien enregistrées. Nous vous recontacterons rapidement.")
-      location.href = '/'
-    })
-    .catch((e) => alert("Une erreur est survenue. Veuillez vérifier les champs renseignés ou nous contacter."))
-  })
-</script>
+<section id="form">
+  <iframe style="border: none; width: 640px; height: 1360px" src="https://naturapeute.getgrist.com/forms/rybxVw388xvh8zcwjNGEgk/4"></iframe>
+</section>
 
 <style>
   form {
@@ -120,5 +28,8 @@ show_join: false
   }
   .hidden {
     display: none;
+  }
+  #form {
+    text-align: center;
   }
 </style>
